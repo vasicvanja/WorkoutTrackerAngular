@@ -1,6 +1,6 @@
 export class Login {
-    Username: string;
-    Password: string;
+    public Username: string;
+    public Password: string;
 
     constructor(Username: string, Password: string) {
         this.Username = Username;

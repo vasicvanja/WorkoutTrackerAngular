@@ -1,8 +1,8 @@
 export class Role {
-    Id: number;
-    Name: string;
-    NormalizedName: string;
-    ConcurrencyStamp: string;
+    public Id: number;
+    public Name: string;
+    public NormalizedName: string;
+    public ConcurrencyStamp: string;
 
     constructor(Id: number, Name: string, NormalizedName: string, ConcurrencyStamp: string) {
         this.Id = Id;

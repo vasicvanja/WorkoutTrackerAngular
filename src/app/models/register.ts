@@ -1,10 +1,10 @@
 export class Register {
-    FirstName: string;
-    LastName: string;
-    Username: string;
-    Email: string;
-    Password: string;
-    PhoneNumber: string;
+    public FirstName: string;
+    public LastName: string;
+    public Username: string;
+    public Email: string;
+    public Password: string;
+    public PhoneNumber: string;
 
     constructor(FirstName: string, LastName: string, Username: string, Email: string, Password: string, PhoneNumber: string) {
         this.FirstName = FirstName;
