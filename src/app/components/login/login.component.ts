@@ -4,12 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NgToastService } from 'ng-angular-popup';
 import { Login } from '../../models/login';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import ValidateForm from '../../helpers/validate-form';
 
 @Component({
   selector: 'app-login',
-  imports: [NgIf, RouterLink, FormsModule, ReactiveFormsModule],
+  imports: [NgIf, RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
   onLogin() {
     if (this.loginForm.valid) {
       const loginObj: Login = {
-        Username: this.loginForm.get('username')?.value,
-        Password: this.loginForm.get('password')?.value
+        Username: this.username?.value,
+        Password: this.password?.value
       };
 
       this.authService.login(loginObj).subscribe({
