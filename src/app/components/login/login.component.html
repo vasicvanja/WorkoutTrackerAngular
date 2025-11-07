@@ -12,7 +12,7 @@
                         <input type="text" class="form-control rounded-3" id="username" formControlName="username"
                             placeholder="Username">
                         <label for="username">Username</label>
-                        <div *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required', 'username')"
+                        <div *ngIf="username?.touched && loginForm.hasError('required', 'username')"
                             class="text-danger">
                             *Username is required.
                         </div>
@@ -21,7 +21,7 @@
                         <input type="password" class="form-control rounded-3" id="password" formControlName="password"
                             placeholder="Password">
                         <label for="password">Password</label>
-                        <div *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')"
+                        <div *ngIf="password?.touched && loginForm.hasError('required', 'password')"
                             class="text-danger">
                             *Password is required.
                         </div>
