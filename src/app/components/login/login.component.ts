@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NgToastService } from 'ng-angular-popup';
@@ -13,7 +13,7 @@ import ValidateForm from '../../helpers/validate-form';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
 
   constructor(
@@ -29,6 +29,14 @@ export class LoginComponent {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+
+  get username() {
+    return this.loginForm.get('username');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
   onLogin() {
