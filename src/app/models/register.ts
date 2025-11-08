@@ -3,15 +3,17 @@ export class Register {
     public LastName: string;
     public Username: string;
     public Email: string;
-    public Password: string;
     public PhoneNumber: string;
+    public Password: string;
+    public BirthDate: string;
 
-    constructor(FirstName: string, LastName: string, Username: string, Email: string, Password: string, PhoneNumber: string) {
+    constructor(FirstName: string, LastName: string, Username: string, Email: string, PhoneNumber: string, Password: string, BirthDate: string) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Username = Username;
         this.Email = Email;
-        this.Password = Password;
         this.PhoneNumber = PhoneNumber;
+        this.Password = Password;
+        this.BirthDate = BirthDate;
     }
 }
