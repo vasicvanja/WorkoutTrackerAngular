@@ -1,1 +1,81 @@
-<p>register works!</p>
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog"
+    id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Sign up</h1>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form [formGroup]="registerForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" id="firstName" formControlName="firstName"
+                            placeholder="First Name">
+                        <label for="firstName">First Name</label>
+                        <div *ngIf="firstName?.touched && registerForm.hasError('required', 'firstName')"
+                            class="text-danger">
+                            *First Name is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" id="lastName" formControlName="lastName"
+                            placeholder="Last Name">
+                        <label for="lastName">Last Name</label>
+                        <div *ngIf="lastName?.touched && registerForm.hasError('required', 'lastName')"
+                            class="text-danger">
+                            *Last Name is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" id="username" formControlName="username"
+                            placeholder="Username">
+                        <label for="username">Username</label>
+                        <div *ngIf="userName?.touched && registerForm.hasError('required', 'username')"
+                            class="text-danger">
+                            *Username is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" id="email" formControlName="email"
+                            placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                        <div *ngIf="email?.touched && registerForm.hasError('required', 'email')"
+                            class="text-danger">
+                            *Email is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" id="phoneNumber" formControlName="phoneNumber"
+                            placeholder="Phone number">
+                        <label for="phoneNumber">Phone number</label>
+                        <div *ngIf="phoneNumber?.touched && registerForm.hasError('required', 'phoneNumber')"
+                            class="text-danger">
+                            *Phone number is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-3" id="password" formControlName="password"
+                            placeholder="Password">
+                        <label for="password">Password</label>
+                        <div *ngIf="password?.touched && registerForm.hasError('required', 'password')"
+                            class="text-danger">
+                            *Password is required.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" id="birthDate" formControlName="birthDate"
+                            placeholder="dd/MM/yyyy">
+                        <label for="birthDate">Birth Date</label>
+                        <div *ngIf="birthDate?.touched && registerForm.hasError('required', 'birthDate')"
+                            class="text-danger">
+                            *Birth Date is required.
+                        </div>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" (click)="onRegister()"
+                        [disabled]="registerForm.invalid" type="submit">Sign up</button>
+                    <small class="text-body-secondary">Already have an account? <a id="forget" routerLink="/login">Sign in</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

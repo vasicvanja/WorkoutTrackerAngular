@@ -1,5 +1,8 @@
+import { Gender } from "./gender";
+
 export class Measurement {
     public Id: number;
+    public Gender: Gender;
     public Weight: number;
     public Height: number;
     public BodyFatPercentage: number;
@@ -9,8 +12,9 @@ export class Measurement {
     public Arms: number;
     public UserId: string;
 
-    constructor(Id: number, Weight: number, Height: number, BodyFatPercentage: number, Chest: number, Waist: number, Hips: number, Arms: number, UserId: string) {
+    constructor(Id: number, Gender: Gender, Weight: number, Height: number, BodyFatPercentage: number, Chest: number, Waist: number, Hips: number, Arms: number, UserId: string) {
         this.Id = Id;
+        this.Gender = Gender;
         this.Weight = Weight;
         this.Height = Height;
         this.BodyFatPercentage = BodyFatPercentage;
