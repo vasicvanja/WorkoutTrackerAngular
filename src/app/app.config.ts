@@ -3,7 +3,7 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { NgToastModule, provideNgToast } from 'ng-angular-popup';
+import { provideNgToast } from 'ng-angular-popup';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -28,6 +28,6 @@ export const appConfig: ApplicationConfig = {
       dismissible: true,
       showIcon: true,
       maxToasts: 1
-    }),
+    })
   ]
 };
