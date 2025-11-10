@@ -1,30 +1,40 @@
 <header class="p-3 border-bottom shadow-sm" [class.bg-body]="true" [class.text-body]="true">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none text-body">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Logo">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-            </a>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a routerLink="/home" class="nav-link px-2 fw-semibold text-primary">Home</a></li>
-                <li><a routerLink="/features" class="nav-link px-2 text-body">Features</a></li>
-                <li><a routerLink="/pricing" class="nav-link px-2 text-body">Pricing</a></li>
-                <li><a routerLink="/faqs" class="nav-link px-2 text-body">FAQs</a></li>
-                <li><a routerLink="/about" class="nav-link px-2 text-body">About</a></li>
-                <li><a routerLink="/support" class="nav-link px-2 text-body">Support</a></li>
-            </ul>
-            <div class="text-end">
-                <button type="button" routerLink="/login" class="btn btn-outline-primary me-2" *ngIf="!isLoggedIn">
-                    Login
-                </button>
-                <button type="button" routerLink="/register" class="btn btn-primary me-2" *ngIf="!isLoggedIn">
-                    Sign-up
-                </button>
-                <button class="btn btn-primary theme-toggle" (click)="toggleTheme()">
-                    <i
-                        [ngClass]="{'bi bi-moon-stars-fill': themeService.isDark(), 'bi bi-sun-fill': !themeService.isDark()}"></i>
-                </button>
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none text-body">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Logo">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a routerLink="/home" class="nav-link px-2 fw-semibold text-primary">Home</a></li>
+            <li><a routerLink="/features" class="nav-link px-2 text-body">Features</a></li>
+            <li><a routerLink="/pricing" class="nav-link px-2 text-body">Pricing</a></li>
+            <li><a routerLink="/faqs" class="nav-link px-2 text-body">FAQs</a></li>
+            <li><a routerLink="/about" class="nav-link px-2 text-body">About</a></li>
+            <li><a routerLink="/support" class="nav-link px-2 text-body">Support</a></li>
+        </ul>
+
+        <div class="text-end d-flex align-items-center gap-2">
+            <button type="button" routerLink="/login" class="btn btn-outline-primary" *ngIf="!isLoggedIn">
+                Login
+            </button>
+            <button type="button" routerLink="/register" class="btn btn-primary" *ngIf="!isLoggedIn">
+                Sign-up
+            </button>
+            <button class="btn btn-outline-secondary theme-toggle" (click)="toggleTheme()" title="Toggle Theme">
+                <i [ngClass]="{ 'bi bi-moon-stars-fill': !themeService.isDark(), 'bi bi-sun-fill': themeService.isDark() }"></i>
+            </button>
+            <div class="dropdown" *ngIf="isLoggedIn">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="user-avatar" width="32" height="32" class="rounded-circle" />
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end text-small shadow">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Workouts</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item text-danger" href="/logout">Sign out</a></li>
+                </ul>
             </div>
         </div>
     </div>
