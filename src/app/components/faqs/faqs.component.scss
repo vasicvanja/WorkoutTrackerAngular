@@ -1,0 +1,22 @@
+.accordion-button {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.accordion-body {
+    text-align: justify;
+    text-align-last: center;
+    color: var(--bs-body-color);
+    line-height: 1.7;
+}
+
+.accordion-item {
+    border-radius: 1rem !important;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: var(--bs-primary);
+}
