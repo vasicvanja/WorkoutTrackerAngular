@@ -33,7 +33,7 @@
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Workouts</a></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item text-danger" href="/logout">Sign out</a></li>
+                    <li><app-logout (logoutCompleted)="onLogOutCompleted()"></app-logout></li>
                 </ul>
             </div>
         </div>
