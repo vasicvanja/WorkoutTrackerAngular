@@ -6,12 +6,24 @@
             </svg>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a routerLink="/home" class="nav-link px-2 fw-semibold text-primary">Home</a></li>
-            <li><a routerLink="/features" class="nav-link px-2 text-body">Features</a></li>
-            <li><a routerLink="/pricing" class="nav-link px-2 text-body">Pricing</a></li>
-            <li><a routerLink="/faqs" class="nav-link px-2 text-body">FAQs</a></li>
-            <li><a routerLink="/about" class="nav-link px-2 text-body">About</a></li>
-            <li><a routerLink="/support" class="nav-link px-2 text-body">Support</a></li>
+            <li>
+                <a routerLink="/home" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            </li>
+            <li>
+                <a routerLink="/features" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold">Features</a>
+            </li>
+            <li>
+                <a routerLink="/pricing" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold">Pricing</a>
+            </li>
+            <li>
+                <a routerLink="/faqs" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold">FAQs</a>
+            </li>
+            <li>
+                <a routerLink="/about" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold">About</a>
+            </li>
+            <li>
+                <a routerLink="/support" class="nav-link px-2 text-body" routerLinkActive="active text-primary fw-semibold">Support</a>
+            </li>
         </ul>
 
         <div class="text-end d-flex align-items-center gap-2">
@@ -22,17 +34,22 @@
                 Sign-up
             </button>
             <button class="btn btn-outline-secondary theme-toggle" (click)="toggleTheme()" title="Toggle Theme">
-                <i [ngClass]="{ 'bi bi-moon-stars-fill': !themeService.isDark(), 'bi bi-sun-fill': themeService.isDark() }"></i>
+                <i
+                    [ngClass]="{ 'bi bi-moon-stars-fill': !themeService.isDark(), 'bi bi-sun-fill': themeService.isDark() }"></i>
             </button>
             <div class="dropdown" *ngIf="isLoggedIn">
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="user-avatar" width="32" height="32" class="rounded-circle" />
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="user-avatar" width="32" height="32"
+                        class="rounded-circle" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end text-small shadow">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Workouts</a></li>
-                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
                     <li><app-logout (logoutCompleted)="onLogOutCompleted()"></app-logout></li>
                 </ul>
             </div>

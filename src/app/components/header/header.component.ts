@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 import { ThemeService } from '../../services/theme.service';
 import { NgClass, NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
@@ -7,7 +7,7 @@ import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, RouterLink, NgIf, LogoutComponent],
+  imports: [NgClass, RouterLink, NgIf, LogoutComponent, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
