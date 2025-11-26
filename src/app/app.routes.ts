@@ -7,6 +7,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { AboutComponent } from './components/about/about.component';
 import { SupportComponent } from './components/support/support.component';
+import { FeaturesComponent } from './components/features/features.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'pricing', component: PricingComponent },
     { path: 'faqs', component: FaqsComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'support', component: SupportComponent }
+    { path: 'support', component: SupportComponent },
+    { path: 'features', component: FeaturesComponent }
 ];
