@@ -8,6 +8,7 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { AboutComponent } from './components/about/about.component';
 import { SupportComponent } from './components/support/support.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { SmtpSettingsComponent } from './components/smtp-settings/smtp-settings.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     { path: 'faqs', component: FaqsComponent },
     { path: 'about', component: AboutComponent },
     { path: 'support', component: SupportComponent },
-    { path: 'features', component: FeaturesComponent }
+    { path: 'features', component: FeaturesComponent },
+    { path: 'smtp-settings', component: SmtpSettingsComponent }
 ];
